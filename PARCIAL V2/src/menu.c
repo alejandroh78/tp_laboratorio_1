@@ -342,7 +342,7 @@ int menuReportes(eCliente listCliente[], int lenCliente, ePedido listPedidos[], 
             printf("***********************************************************************************************************\n");
             printf("                                    Cliente con mas pedidos Pendientes \n");
             printf("***********************************************************************************************************\n");
-            clienteMasPedidosPendientes(listPedidos,lenPedidos);
+            clienteMasPedidosPendientes(listPedidos,lenPedidos, listCliente, lenCliente);
 
             printf("\n");
             break;
@@ -351,7 +351,7 @@ int menuReportes(eCliente listCliente[], int lenCliente, ePedido listPedidos[], 
             printf("***********************************************************************************************************\n");
             printf("                                    Cliente con mas pedidos Completados \n");
             printf("***********************************************************************************************************\n");
-            clienteMasPedidosCompletados(listPedidos,lenPedidos);
+            clienteMasPedidosCompletados(listPedidos,lenPedidos, listCliente, lenCliente);
 
             printf("\n");
             break;

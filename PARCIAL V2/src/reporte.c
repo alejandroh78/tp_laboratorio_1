@@ -187,7 +187,7 @@ int promedioKilosPolipropileno(ePedido listPedido[], int lenPedido, eCliente lis
     return retorno;
 }
 
-int clienteMasPedidosPendientes (ePedido listaPedido[], int lenPedido)
+int clienteMasPedidosPendientes (ePedido listaPedido[], int lenPedido, eCliente listaCliente[], int lenCliente)
 {
 	  int banderaMasCantidad;
 	  int clienteMasCantidad;
@@ -210,12 +210,21 @@ int clienteMasPedidosPendientes (ePedido listaPedido[], int lenPedido)
 	  }
 	  else
 	  {
-		  printf("cliente mas pedidos %d", clienteMasCantidad);
+		    for(int j=0; j < lenCliente; j++)
+		    {
+		    	if(listaCliente[j].isEmpty == OCUPADO && listaCliente[j].id == clienteMasCantidad)
+		        {
+
+		        	printf("cliente mas pedidos pendientes %s", listaCliente[j].nombre);
+		        	break;
+		        }
+		    }
+
 	  }
 	  return banderaMasCantidad;
 }
 
-int clienteMasPedidosCompletados (ePedido listaPedido[], int lenPedido)
+int clienteMasPedidosCompletados (ePedido listaPedido[], int lenPedido, eCliente listaCliente[], int lenCliente)
 {
 	  int banderaMasCantidad;
 	  int clienteMasCantidad;
@@ -236,7 +245,16 @@ int clienteMasPedidosCompletados (ePedido listaPedido[], int lenPedido)
 	  }
 	  else
 	  {
-		  printf("cliente mas pedidos %d", clienteMasCantidad);
+		    for(int j=0; j < lenCliente; j++)
+		    {
+		    	if(listaCliente[j].isEmpty == OCUPADO && listaCliente[j].id == clienteMasCantidad)
+		        {
+
+		        	printf("cliente mas pedidos procesados %s", listaCliente[j].nombre);
+		        	break;
+		        }
+		    }
+
 	  }
 
 	  return banderaMasCantidad;

@@ -228,7 +228,7 @@ int mostrarLocalidades(eLocalidad listLocalidad[], int lenLocalidad)
     printf("* IDLocalidad                            Nombre * \n");
     printf("*************************************************\n");
 
-    for(i=0; i < lenLocalidad; i++)
+    for(int i=0; i < lenLocalidad; i++)
     {
     	if(listLocalidad[i].isEmpty == OCUPADO)
         {
