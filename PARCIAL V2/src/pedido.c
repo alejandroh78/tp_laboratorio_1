@@ -278,7 +278,7 @@ void pedidosHardcode(ePedido listPedido[], int lenPedido, int quantity)
 		{getNuevoPedidoId(),1001, 1000,0,0,200,  "PENDIENTE", OCUPADO},
 		{getNuevoPedidoId(),1001, 1500,0,0,0,  "PENDIENTE", OCUPADO},
 		{getNuevoPedidoId(),1002, 3000,100,0,300,  "PENDIENTE", OCUPADO},
-		{getNuevoPedidoId(),1002, 200, 0,150,500, "PENDIENTE", OCUPADO}
+		{getNuevoPedidoId(),1000, 200, 0,150,500, "COMPLETADO", OCUPADO}
 
 
 

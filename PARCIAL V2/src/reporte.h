@@ -85,5 +85,5 @@ int pedidosPendientesLocalidad(ePedido listPedido[], int lenPedido, eCliente lis
 ///           [0]  Si existe datos para mostrar.
 int promedioKilosPolipropileno(ePedido listPedido[], int lenPedido, eCliente listCliente[], int lenCliente );
 int clienteMasPedidosPendientes (ePedido listaPedido[], int lenPedido);
-
+int clienteMasPedidosCompletados (ePedido listaPedido[], int lenPedido);
 #endif /* REPORTE_H_ */

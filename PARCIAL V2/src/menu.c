@@ -284,8 +284,9 @@ int menuReportes(eCliente listCliente[], int lenCliente, ePedido listPedidos[], 
     printf("3- Pedidos Procesados \n");
     printf("4- Pedidos por Localidad \n");
     printf("5- Cantidad de kilos de poliproleno reciclado promedio por cliente \n");
-    printf("6- Cliente con mas pedidos pendientes \n");
-    inputNumberInt(&opcionMenu, "Ingrese una opcion: ", "Error, ingrese una opcion: ", 1, 6);
+    printf("6- Cliente con mas pedidos Pendientes \n");
+    printf("7- Cliente con mas pedidos Completados \n");
+    inputNumberInt(&opcionMenu, "Ingrese una opcion: ", "Error, ingrese una opcion: ", 1, 7);
 
     switch(opcionMenu){
         case 1:
@@ -339,9 +340,18 @@ int menuReportes(eCliente listCliente[], int lenCliente, ePedido listPedidos[], 
         case 6:
         	system("cls");
             printf("***********************************************************************************************************\n");
-            printf("                                    Cliente con mas pedidos pendientes \n");
+            printf("                                    Cliente con mas pedidos Pendientes \n");
             printf("***********************************************************************************************************\n");
             clienteMasPedidosPendientes(listPedidos,lenPedidos);
+
+            printf("\n");
+            break;
+        case 7:
+        	system("cls");
+            printf("***********************************************************************************************************\n");
+            printf("                                    Cliente con mas pedidos Completados \n");
+            printf("***********************************************************************************************************\n");
+            clienteMasPedidosCompletados(listPedidos,lenPedidos);
 
             printf("\n");
             break;

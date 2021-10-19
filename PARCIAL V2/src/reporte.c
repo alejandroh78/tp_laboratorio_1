@@ -190,21 +190,54 @@ int promedioKilosPolipropileno(ePedido listPedido[], int lenPedido, eCliente lis
 int clienteMasPedidosPendientes (ePedido listaPedido[], int lenPedido)
 {
 	  int banderaMasCantidad;
-	  //eProducto productoMasCaro;
 	  int clienteMasCantidad;
 
 	  banderaMasCantidad = 0;
 
 	  for (int i = 0; i < lenPedido; i++)
 	  {
-	      if (strcmp(listaPedido[i].estado, "COMPLETADO") && (listaPedido[i].idCliente > clienteMasCantidad || banderaMasCantidad == 0))
+	      if (strcmp(listaPedido[i].estado, "PENDIENTE") == 0 && (listaPedido[i].idCliente > clienteMasCantidad || banderaMasCantidad == 0))
 	      {
 	    	  clienteMasCantidad = listaPedido[i].idCliente;
 	    	  banderaMasCantidad = 1;
 		}
 	  }
-	  printf("cliente mas pedidos %d", clienteMasCantidad);
-	  //*precioMasCaro = precioMasCaroLocal;
+
+
+	  if (banderaMasCantidad == 0)
+	  {
+		  printf("No hay pedidos pendientes");
+	  }
+	  else
+	  {
+		  printf("cliente mas pedidos %d", clienteMasCantidad);
+	  }
+	  return banderaMasCantidad;
+}
+
+int clienteMasPedidosCompletados (ePedido listaPedido[], int lenPedido)
+{
+	  int banderaMasCantidad;
+	  int clienteMasCantidad;
+
+	  banderaMasCantidad = 0;
+
+	  for (int i = 0; i < lenPedido; i++)
+	  {
+	      if (strcmp(listaPedido[i].estado, "COMPLETADO") == 0 && (listaPedido[i].idCliente > clienteMasCantidad || banderaMasCantidad == 0))
+	      {
+	    	  clienteMasCantidad = listaPedido[i].idCliente;
+	    	  banderaMasCantidad = 1;
+		}
+	  }
+	  if (banderaMasCantidad == 0)
+	  {
+		  printf("No hay pedidos completados");
+	  }
+	  else
+	  {
+		  printf("cliente mas pedidos %d", clienteMasCantidad);
+	  }
 
 	  return banderaMasCantidad;
 }
