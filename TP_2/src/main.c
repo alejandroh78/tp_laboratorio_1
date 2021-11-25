@@ -10,8 +10,7 @@
 #include "input.h"
 #include "ArrayEmployees.h"
 
-#define TAMEMP 1000
-#define TAMSEC 5
+
 #define OCUPADO 1
 #define VACIO 0
 

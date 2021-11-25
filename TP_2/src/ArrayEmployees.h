@@ -1,7 +1,10 @@
 #ifndef ARRAYEMPLOYEES_H_INCLUDED
 #define ARRAYEMPLOYEES_H_INCLUDED
 
-
+#define TAMEMP 1000
+#define TAMSEC 5
+#define NOMBRE_MAXIMO 51
+#define NOMBRE_SECTOR_MAXIMO 30
 typedef struct
 {
     int id;
@@ -137,5 +140,8 @@ int sortEmployeesByName(Employee* list, int lengthEmp, int order);
 /// @param sector array de sectores
 /// @param tamSec longitud del array de sectores
 void reportTotalEmployeeCalc(Employee list[], int tam, eSector sector[], int tamSec);
+
+
+int getEmptyIndexOfEmployees(Employee list[], int length);
 
 #endif

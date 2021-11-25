@@ -24,8 +24,7 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
         }
         else
         {
-
-        	 emptyIndex = initEmployees(list, len);
+        	 emptyIndex = getEmptyIndexOfEmployees(list, len);
 
             if(emptyIndex != -1)
             {
@@ -140,7 +139,24 @@ int initEmployees(Employee list[],int tam)
     return retorno;
 }
 
+int getEmptyIndexOfEmployees(Employee list[], int length)
+{
+    int returnValue = -1;
 
+    if(list != NULL && length > 0 && length <= 1000)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            if(list[i].isEmpty == 0)
+            {
+                returnValue = i;
+                break;
+            }
+        }
+    }
+
+    return returnValue;
+}
 
 int sortingEmployees(Employee* list, int lengthEmp){
     int order;
@@ -221,22 +237,36 @@ int sortEmployeesByName(Employee* list, int lengthEmp, int order){
 
 	int retorno=0;
 
-    for(int i=0;i<lengthEmp-1;i++){
-        for(int j=i+1;j<lengthEmp;j++){
-            if(list[i].isEmpty==OCUPADO){
-                if(order==1){
-                    if(list[i].sector>list[j].sector){
+    for(int i=0;i<lengthEmp-1;i++)
+    {
+        for(int j=i+1;j<lengthEmp;j++)
+        {
+            if(list[i].isEmpty==OCUPADO)
+            {
+                if(order==1)
+                {
+                    if(list[i].sector>list[j].sector)
+                    {
                     	swapEmployees(list,lengthEmp,i,j);
-                    }else{
-                        if((list[i].sector==list[j].sector)&&(stricmp(list[i].lastName,list[j].lastName)>0)){
+                    }
+                    else
+                    {
+                        if((list[i].sector==list[j].sector)&&(stricmp(list[i].lastName,list[j].lastName)>0))
+                        {
                         	swapEmployees(list,lengthEmp,i,j);
                         }
                     }
-                }else if(order==2){
-                    if(list[i].sector<list[j].sector){
+                }
+                else if(order==2)
+                {
+                    if(list[i].sector<list[j].sector)
+                    {
                     	swapEmployees(list,lengthEmp,i,j);
-                    }else{
-                        if((list[i].sector==list[j].sector)&&(stricmp(list[i].lastName,list[j].lastName)<0)){
+                    }
+                    else
+                    {
+                        if((list[i].sector==list[j].sector)&&(stricmp(list[i].lastName,list[j].lastName)<0))
+                        {
                         	swapEmployees(list,lengthEmp,i,j);
                         }
                     }
