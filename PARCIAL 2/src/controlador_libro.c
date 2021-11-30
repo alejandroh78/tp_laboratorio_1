@@ -198,7 +198,7 @@ int controller_librosEditorialMinotauro(LinkedList* this,LinkedList* this2)
 int controller_librosConDescuento(LinkedList* this,LinkedList* this2)
 {
     int retorno = -1;
-    LinkedList* librosPlanetaSigloXXI;
+    //LinkedList* librosPlanetaSigloXXI;
 
     if(this!=NULL && this2 != NULL)
     {
